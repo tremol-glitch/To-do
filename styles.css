@@ -1,0 +1,188 @@
+/* Global Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #F4F4F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    flex-direction: column;
+}
+
+/* Container that holds both lists */
+.container-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;  /* Allow containers to wrap on smaller screens */
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Each individual container */
+.container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    width: 380px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.3s ease;
+    margin: 10px; /* Add space between containers */
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Heading */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Input fields */
+input[type="text"] {
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    background-color: #f1f1f6;
+    border: 2px solid #dcdde1;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007aff;
+}
+
+/* Add task button */
+button {
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    background-color: #0051d4;
+}
+
+/* Task List */
+ul {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column; /* Stack the task text and buttons */
+    align-items: flex-start;
+    transition: background-color 0.3s ease;
+    border: 1px solid #f1f1f6;
+}
+
+li:hover {
+    background-color: #e4e4e7;
+}
+
+li .button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px; /* Adds space between the task text and buttons */
+}
+
+li button {
+    background-color: #ff3b30;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+li button:hover {
+    background-color: #d91c1c;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #b1b1b1;
+}
+
+li.completed button {
+    background-color: #34c759;
+}
+
+li.completed button:hover {
+    background-color: #28a745;
+}
+
+/* Mobile-specific Styles */
+@media (max-width: 768px) {
+    .container-container {
+        flex-direction: column; /* Stack containers vertically */
+        gap: 20px;
+    }
+
+    .container {
+        width: 100%; /* Make containers full-width */
+        max-width: 500px; /* Add a max-width to avoid too wide on very large screens */
+    }
+
+    h1 {
+        font-size: 20px; /* Slightly smaller heading */
+        margin-bottom: 15px;
+    }
+
+    input[type="text"], button {
+        font-size: 14px; /* Smaller font sizes for smaller screens */
+        padding: 10px;
+    }
+
+    li {
+        padding: 12px; /* Less padding for list items */
+    }
+}
+
+/* Tablet-Specific Styles (larger mobile devices) */
+@media (max-width: 1024px) {
+    .container-container {
+        gap: 20px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 600px;
+    }
+}
